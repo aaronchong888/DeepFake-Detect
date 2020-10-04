@@ -20,7 +20,9 @@ Due to the nature of deep neural networks being data-driven, it is necessary to 
 
 <p align="center"><img alt="" src="https://github.com/aaronchong888/DeepFake-Detect/blob/master/img/sample_dataset.png" width="80%"></p>
 
-Combining all the datasets from different generations would provide us a total of 134,446 videos with approximately 1,140 unique identities and around 20 deepfake synthesis methods.
+Combining all the datasets from different sources would provide us a total of 134,446 videos with approximately 1,140 unique identities and around 20 deepfake synthesis methods.
+
+<br>
 
 ## Getting Started
 
@@ -47,9 +49,7 @@ pip install -r requirements.txt
 python 00-convert_video_to_image.py
 ```
 
-Extract all the video frames from the acquired deepfake datasets above, saving them as individual images for further processing. 
-
-In order to cater for different video qualities and to optimize for the image processing performance, the following image resizing strategies were implemented:
+Extract all the video frames from the acquired deepfake datasets above, saving them as individual images for further processing. In order to cater for different video qualities and to optimize for the image processing performance, the following image resizing strategies were implemented:
 
 - 2x resize for videos with width less than 300 pixels
 - 1x resize for videos with width between 300 and 1000 pixels
@@ -62,15 +62,13 @@ In order to cater for different video qualities and to optimize for the image pr
 python 01a-crop_faces_with_mtcnn.py
 ```
 
-Following the frame extraction step (Step 0), we would further process the frame images to crop out the facial parts in order to allow the neural network to focus on capturing the facial manipulation artifacts. 
+Further process the frame images to crop out the facial parts in order to allow the neural network to focus on capturing the facial manipulation artifacts. In cases where there are more than one subject appearing in the same video frame, each detection result is saved separately to provide better variety for the training dataset.
 
-The pretrained Multi-task Cascaded Convolutional Networks (MTCNN) is used for detecting faces from each frame, and a 30% margin from each side of the detected face bounding box is included as part of the crop so that the face wrapping edges could also be picked up by the detector. In cases where there are more than one subject appearing in the same video frame, each detection result is saved separately to provide better variety for the training dataset.
-
-- The MTCNN model used is from the following GitHub repo: https://github.com/ipazc/mtcnn
+- The pre-trained MTCNN model used is coming from this GitHub repo: https://github.com/ipazc/mtcnn
 - Added 30% margins from each side of the detected face bounding box
 - Used 95% as the confidence threshold to capture the face images
 
-#### (Optional) Step 1 - Extract faces from the deepfake images with Azure Computer Vision API
+#### (Optional) Step 1b - Extract faces from the deepfake images with Azure Computer Vision API
 
 In case you do not have a good enough hardware to run MTCNN, or you want to achieve a faster execution time, you may choose to run **01b** instead of **01a** to leverage the [Azure Computer Vision API](https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/) for facial recognition.
 
@@ -80,7 +78,7 @@ python 01b-crop_faces_with_azure-vision-api.py
 
 > Replace the missing parts (*API Name* & *API Key*) before running
 
-#### Step 2 - Balance and split dataset into various folders
+#### Step 2 - Balance and split datasets into various folders
 
 ```
 python 02-prepare_fake_real_dataset.py
@@ -90,13 +88,13 @@ As we observed that the number of fakes are much larger than the number of real 
 
 We also need to split the dataset into training, validation and testing sets (for example, in the ratio of 80:10:10) as the final step in the data preparation phase.
 
-#### Step 3 - Deepfake detection model training
+#### Step 3 - Model training
 
 ```
 python 03-train_cnn.py
 ```
 
-We have considered EfficientNet as the backbone for our development work. Given that most of the deepfake videos are synthesized using a frame-by-frame approach, we have formulated the deepfake detection task as a binary classification problem such that it would be generally applicable to both video and image contents.
+EfficientNet is used as the backbone for the development work. Given that most of the deepfake videos are synthesized using a frame-by-frame approach, we have formulated the deepfake detection task as a binary classification problem such that it would be generally applicable to both video and image contents.
 
 In this code sample, we have adapted the EfficientNet B0 model in several ways: The top input layer is replaced by an input size of 128x128 with a depth of 3, and the last convolutional output from B0 is fed to a global max pooling layer. In addition, 2 additional fully connected layers have been introduced with ReLU activations, followed by a final output layer with Sigmoid activation to serve as a binary classifier. 
 
