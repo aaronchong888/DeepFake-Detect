@@ -1,8 +1,37 @@
 # DeepFake-Detect
 
-<p align="center"><a href="https://deepfake-detect.com/"><img alt="" src="https://github.com/aaronchong888/DeepFake-Detect/blob/master/img/dfdetect-home.png" width="60%"></a></p>
+<p align="center">
+  <a href="https://deepfake-detect.com/">https://deepfake-detect.com/</a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT" />
+  <img src="https://img.shields.io/badge/Python-3-blue.svg" alt="Python 3" />
+  <img src="https://img.shields.io/badge/TensorFlow-2.x-FF6F00?logo=tensorflow" alt="TensorFlow" />
+  <img src="https://img.shields.io/badge/Keras-2.2+-D00000?logo=keras" alt="Keras" />
+  <img src="https://img.shields.io/github/stars/aaronchong888/DeepFake-Detect?style=social" alt="GitHub stars" />
+  <img src="https://img.shields.io/github/forks/aaronchong888/DeepFake-Detect?style=social" alt="GitHub forks" />
+  <img src="https://img.shields.io/github/issues/aaronchong888/DeepFake-Detect" alt="GitHub issues" />
+  <img src="https://img.shields.io/github/last-commit/aaronchong888/DeepFake-Detect" alt="Last commit" />
+  <img src="https://img.shields.io/github/contributors/aaronchong888/DeepFake-Detect" alt="Contributors" />
+  <img src="https://img.shields.io/github/languages/count/aaronchong888/DeepFake-Detect" alt="Languages" />
+</p>
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=aaronchong888/DeepFake-Detect&type=Date)](https://star-history.com/#aaronchong888/DeepFake-Detect&Date)
+
+---
+
+## Demo
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/aaronchong888/DeepFake-Detect/master/img/demo.gif" alt="Demo" width="80%" />
+</p>
 
 <p align="center"><a href="https://deepfake-detect.com/">https://deepfake-detect.com/</a></p>
+
+---
 
 ## Description
 
@@ -20,7 +49,7 @@ Due to the nature of deep neural networks being data-driven, it is necessary to 
 - [Celeb-DF](https://github.com/danmohaha/celeb-deepfakeforensics)
 - [Facebook Deepfake Detection Challenge (DFDC)](https://ai.facebook.com/datasets/dfdc/)
 
-<p align="center"><img alt="" src="https://github.com/aaronchong888/DeepFake-Detect/blob/master/img/sample_dataset.png" width="80%"></p>
+<p align="center"><img alt="" src="https://raw.githubusercontent.com/aaronchong888/DeepFake-Detect/master/img/sample_dataset.png" width="80%"></p>
 
 Combining all the datasets from different sources would provide us a total of 134,446 videos with approximately 1,140 unique identities and around 20 deepfake synthesis methods.
 
@@ -114,5 +143,4 @@ See also the list of [contributors](https://github.com/aaronchong888/DeepFake-De
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
 ## Acknowledgments
-
 This project is built using the following packages and libraries as listed [here](https://github.com/aaronchong888/DeepFake-Detect/network/dependencies)
