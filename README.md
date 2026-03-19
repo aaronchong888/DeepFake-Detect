@@ -2,14 +2,18 @@
 
 # DeepFake-Detect
 
-**Open-source deepfake detection & face forgery detection — train your own model with TensorFlow, Keras & EfficientNet**
-
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3](https://img.shields.io/badge/python-3-blue.svg)](https://www.python.org/downloads/)
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-FF6F00?logo=tensorflow)](https://www.tensorflow.org/)
 [![Keras](https://img.shields.io/badge/Keras-2.2+-D00000?logo=keras)](https://keras.io/)
 [![GitHub stars](https://img.shields.io/github/stars/aaronchong888/DeepFake-Detect?style=social)](https://github.com/aaronchong888/DeepFake-Detect/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/aaronchong888/DeepFake-Detect?style=social)](https://github.com/aaronchong888/DeepFake-Detect/network/members)
+
+<p align="center">
+  <a href="https://deepfake-detect.com/"><img src="img/dfdetect-home.png" alt="DF-Detect deepfake detection web app homepage" width="70%" /></a>
+</p>
+
+**Open-source deepfake detection & face forgery detection — train your own model with TensorFlow, Keras & EfficientNet**
 
 [**Live Demo**](https://deepfake-detect.com/) · [Report Bug](https://github.com/aaronchong888/DeepFake-Detect/issues) · [Request Feature](https://github.com/aaronchong888/DeepFake-Detect/issues)
 
@@ -37,8 +41,6 @@
 ## About
 
 **DeepFake-Detect** is an open-source pipeline for training **deepfake detection** and **face forgery detection** models from scratch. Built with [Python](https://www.python.org), [Keras](https://keras.io), and [TensorFlow](https://www.tensorflow.org), the detector uses an **EfficientNet** backbone and is trained on major public benchmarks (FaceForensics++, Celeb-DF, DFDC, and others) to recognize synthetic faces and manipulated media.
-
-Try it in your browser: **[DF-Detect](https://deepfake-detect.com/)** — a free web app to detect deepfake images and videos.
 
 ---
 
@@ -68,10 +70,6 @@ Try it in your browser: **[DF-Detect](https://deepfake-detect.com/)** — a free
 
 <p align="center">
   <strong><a href="https://deepfake-detect.com/">Try the live demo → deepfake-detect.com</a></strong>
-</p>
-
-<p align="center">
-  <a href="https://deepfake-detect.com/"><img src="img/dfdetect-home.png" alt="DF-Detect deepfake detection web app homepage" width="70%" /></a>
 </p>
 
 ---
@@ -115,6 +113,10 @@ python 03-train_cnn.py                 # Train EfficientNet classifier
 
 ## Training Datasets
 
+<p align="center">
+  <img src="img/sample_dataset.png" alt="DeepFake-Detect training dataset sample: real vs deepfake face images" width="85%" />
+</p>
+
 The model is trained on the following public deepfake datasets to cover diverse identities and synthesis methods:
 
 | Dataset | Link |
@@ -126,10 +128,6 @@ The model is trained on the following public deepfake datasets to cover diverse 
 | Facebook DFDC | [https://ai.facebook.com/datasets/dfdc/](https://ai.facebook.com/datasets/dfdc/) |
 
 **Aggregate scale (approximate):** ~134,446 videos · ~1,140 identities · ~20 synthesis methods.
-
-<p align="center">
-  <img src="img/sample_dataset.png" alt="DeepFake-Detect training dataset sample: real vs deepfake face images" width="85%" />
-</p>
 
 ---
 
@@ -192,7 +190,7 @@ If you use DeepFake-Detect in research or a project, please cite:
 
 ## Authors & License
 
-- **[Aaron Chong](https://github.com/aaronchong888)** — *Initial work*
+- **[Aaron Chong](https://github.com/aaronchong888)** — *Initial work & Maintenance*
 - **[Hugo Ng](https://github.com/hugoclong)** — *Initial work*
 
 See [contributors](https://github.com/aaronchong888/DeepFake-Detect/contributors) for the full list.
