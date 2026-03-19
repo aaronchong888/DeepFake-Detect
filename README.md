@@ -106,7 +106,6 @@ The model is trained on the following public deepfake datasets to cover diverse 
 | **2** | `02-prepare_fake_real_dataset.py` | Down-sample fakes to match real count; split into train/val/test (e.g. 80:10:10). |
 | **3** | `03-train_cnn.py` | Train EfficientNet B0 backbone → global max pooling → 2× FC (ReLU) → sigmoid. Input 128×128 RGB; output probability pristine (1) vs deepfake (0). |
 
-<br>
 
 #### Step 0 - Convert video frames to individual images
 
